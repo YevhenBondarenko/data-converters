@@ -22,7 +22,7 @@ jobs:
           architecture: "x64"
       - name: Install tb-rest-client
         run: |
-          pip install tb-rest-client-pe
+          pip3 install tb-rest-client-pe
       - name: Run Validation Script
         env:
           ENDPOINT: ${{ secrets.ENDPOINT }}
