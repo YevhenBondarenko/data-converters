@@ -14,6 +14,7 @@ client.login(username=USERNAME, password=PASSWORD)
 
 
 def find_payload_and_result_pairs(directory):
+    print(f"Endpoint: {ENDPOINT}")
     payloads = sorted([f for f in os.listdir(directory) if re.match(r'payload(_\d+)?\.json', f)])
     results = sorted([f for f in os.listdir(directory) if re.match(r'result(_\d+)?\.json', f)])
 
