@@ -13,10 +13,11 @@ jobs:
     name: Check data converters
     runs-on: ubuntu-20.04
     steps:
-      - name: Checkout code
+      - name: Checkout PR code from fork
         uses: actions/checkout@v2
         with:
-          ref: ${{ github.event_name == 'pull_request_target' && github.event.pull_request.head.ref || 'main' }}
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          ref: ${{ github.event.pull_request.head.ref }}
       - name: Set up Python 3.10
         uses: actions/setup-python@v3
         with:
